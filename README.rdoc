@@ -1,6 +1,6 @@
 = conv
 
-Description goes here.
+This is primarily a test push to gemcutter.
 
 == Note on Patches/Pull Requests
  
