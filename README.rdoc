@@ -1,6 +1,8 @@
 = conv
 
-This is primarily a test push to gemcutter.
+This was primarily a test push to gemcutter.
+
+conv contains convenience methods that I frequently add to projects.
 
 == Note on Patches/Pull Requests
  
