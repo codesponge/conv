@@ -14,7 +14,9 @@ module Loopable
     end
     @position
   end
-
+  alias_method :current_index, :position
+  alias_method :pointer, :pointer
+  
   #retruns the object at position
   def current
     #if self[position].respond_to?(:loopable_current) then
@@ -67,3 +69,4 @@ end # => module Loop
 class Loop < Array
   include Loopable
 end
+
