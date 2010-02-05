@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{conv}
-  s.version = File.read('LICENSE')
+  s.version = File.read('VERSION')
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["codesponge"]
@@ -25,8 +25,11 @@ Gem::Specification.new do |s|
      "VERSION",
      "conv.gemspec",
      "lib/conv.rb",
+     "lib/array.rb",
+     "lib/loop.rb",
      "test/helper.rb",
-     "test/test_conv.rb"
+     "test/test_array.rb",
+     "test/test_loop.rb"
   ]
   s.homepage = %q{http://github.com/codesponge/conv}
   s.rdoc_options = ["--charset=UTF-8"]
@@ -35,7 +38,8 @@ Gem::Specification.new do |s|
   s.summary = %q{ctest conv methods}
   s.test_files = [
     "test/helper.rb",
-     "test/test_conv.rb"
+     "test/test_array.rb",
+     "test/test_loop.rb"
   ]
 
   if s.respond_to? :specification_version then
