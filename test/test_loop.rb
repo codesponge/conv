@@ -1,6 +1,6 @@
 require 'helper'
 
-class TestConv < Test::Unit::TestCase
+class TestLoop < Test::Unit::TestCase
   context "A Loop instance " do
     
     setup do
@@ -12,12 +12,14 @@ class TestConv < Test::Unit::TestCase
     end
     
     @expected_methods = %w[next prev forward backward current set_position position]
-    @expected_methods.each do |m|    
+    
+    @expected_methods.each do |m|
       should "respond to #{m}" do
-        assert_respond_to(@al, m)
+        assert_respond_to(@al, m, "did not respond to #{m}")
       end
       
     end
+    
     
     should "go next and prev" do
       c = @al.current

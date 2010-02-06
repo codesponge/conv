@@ -5,12 +5,12 @@
 
 Gem::Specification.new do |s|
   s.name = %q{conv}
-  s.version = File.read('VERSION')
+  s.version = "0.0.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["codesponge"]
-  s.date = %q{2010-01-26}
-  s.description = %q{handy methods}
+  s.date = %q{2010-02-06}
+  s.description = %q{Mainly testing gemcutter deployment}
   s.email = %q{billy@codesponge.com}
   s.extra_rdoc_files = [
     "LICENSE",
@@ -24,8 +24,8 @@ Gem::Specification.new do |s|
      "Rakefile",
      "VERSION",
      "conv.gemspec",
-     "lib/conv.rb",
      "lib/array.rb",
+     "lib/conv.rb",
      "lib/loop.rb",
      "test/helper.rb",
      "test/test_array.rb",
@@ -39,7 +39,8 @@ Gem::Specification.new do |s|
   s.test_files = [
     "test/helper.rb",
      "test/test_array.rb",
-     "test/test_loop.rb"
+     "test/test_loop.rb",
+     "test/test_pallet.rb"
   ]
 
   if s.respond_to? :specification_version then

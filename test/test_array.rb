@@ -1,6 +1,6 @@
 require 'helper'
 
-class TestConv < Test::Unit::TestCase
+class TestArray < Test::Unit::TestCase
   context "An array" do
     setup do
       @ar = [1,2,3,4,5]
