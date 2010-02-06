@@ -27,9 +27,12 @@ Gem::Specification.new do |s|
      "lib/array.rb",
      "lib/conv.rb",
      "lib/loop.rb",
+     "lib/pallet.rb",
+     "lib/pallets/pantoneish.yaml",
      "test/helper.rb",
      "test/test_array.rb",
-     "test/test_loop.rb"
+     "test/test_loop.rb",
+     "test/test_pallet.rb"
   ]
   s.homepage = %q{http://github.com/codesponge/conv}
   s.rdoc_options = ["--charset=UTF-8"]
