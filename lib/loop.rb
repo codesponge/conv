@@ -7,7 +7,7 @@ module Loopable
   end
   alias_method :set_pos, :set_position
   
-  #returns the position ( current index)
+  #returns the position ( current index )
   def position
     unless(defined?(@position)) then
       @position = 0

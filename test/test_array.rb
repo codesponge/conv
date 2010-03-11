@@ -8,6 +8,10 @@ class TestArray < Test::Unit::TestCase
     should "respond to rand" do
       assert @ar.respond_to?('rand')
     end
-  end
 
+    should "return random element when rand is called" do
+      re = @ar.rand
+      assert @ar.include?(re)
+    end
+  end
 end
