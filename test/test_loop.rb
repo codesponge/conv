@@ -17,7 +17,6 @@ class TestLoop < Test::Unit::TestCase
       should "respond to #{m}" do
         assert_respond_to(@al, m, "did not respond to #{m}")
       end
-      
     end
     
     

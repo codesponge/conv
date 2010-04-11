@@ -10,12 +10,12 @@ class TestPallet < Test::Unit::TestCase
       
       should "Load a default collection of colors" do
         assert @pal.size > 0, " There are no colors!"
+        
       end
       
       should "return an object of type Color" do
         assert_equal @pal.first.class, Color
       end
-    
     
     
     end

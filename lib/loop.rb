@@ -15,7 +15,7 @@ module Loopable
     @position
   end
   alias_method :current_index, :position
-  alias_method :pointer, :pointer
+  alias_method :pointer, :position
   
   #retruns the object at position
   def current
