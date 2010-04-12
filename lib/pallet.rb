@@ -13,7 +13,7 @@ class Color
       end
     rescue ArgumentError => e
       puts "#{e}"
-      puts "Bailing out till bad color is fixed in #{__FILE__} around line #{__LINE__}"
+      puts "Need a String and I am Bailing out till bad color is fixed in #{__FILE__} around line #{__LINE__}"
     end
   end
   
@@ -22,10 +22,11 @@ class Color
     @hex_val
   end
   
-  def hex_str
+  def hex_to_str
     "##{hex_val}"
   end
   
+  #returns
   def to_s
     hex_str
   end

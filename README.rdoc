@@ -1,12 +1,5 @@
 = conv
 
-This was primarily a test push to gemcutter.
-
-conv contains convenience methods that I frequently add to projects.
-
-This version contains 
-	the Loop class (via the Loopable Module).
-	Array.rand method
 
 
 == Note on Patches/Pull Requests
