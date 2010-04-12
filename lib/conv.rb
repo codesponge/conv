@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby -wKU
 
-require File.join(File.dirname(__FILE__),'array')
-require File.join(File.dirname(__FILE__),'loop')
-require File.join(File.dirname(__FILE__),'pallet')
+
+#Files to load when conv in required
+%w{array loop pallet}.each { |file| require File.join(File.dirname(__FILE__),file) }

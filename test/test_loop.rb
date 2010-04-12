@@ -40,7 +40,6 @@ class TestLoop < Test::Unit::TestCase
       assert_equal @al.prev,@al.last
     end
     
-    
   end
   
 end

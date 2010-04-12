@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["codesponge"]
   s.date = %q{2010-02-06}
-  s.description = %q{Mainly testing gemcutter deployment}
+  s.description = %q{convient convience methods}
   s.email = %q{billy@codesponge.com}
   s.extra_rdoc_files = [
     "LICENSE",

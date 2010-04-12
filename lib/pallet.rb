@@ -14,11 +14,10 @@ class Color
     rescue ArgumentError => e
       puts "#{e}"
       puts "Bailing out till bad color is fixed in #{__FILE__} around line #{__LINE__}"
-      
     end
   end
   
-  
+  #returns hex values for the color
   def hex_val
     @hex_val
   end
@@ -27,10 +26,11 @@ class Color
     "##{hex_val}"
   end
   
-  
   def to_s
     hex_str
   end
+  
+  
   
   def set_hexval_from_string(str)
       if (str.first.strip =~ /#*([A-F0-9]{3,6})/i) then
