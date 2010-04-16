@@ -1,4 +1,3 @@
-require 'rubygems'
 require 'rake'
 
 begin
@@ -39,5 +38,5 @@ Rake::RDocTask.new do |rdoc|
   rdoc.title = "conv #{version}"
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
-  
+
 end
