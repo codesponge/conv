@@ -16,23 +16,26 @@ class Color
       puts "Need a String and I am Bailing out till bad color is fixed in #{__FILE__} around line #{__LINE__}"
     end
   end
-  
+
   #returns hex values for the color
+  #it is actually still a string but with no leading '#'
+  # => FEFEFE
   def hex_val
     @hex_val
   end
-  
-  def hex_to_str
+
+  #returns a string with a leading #
+  # => #FEFEFE
+  def hex_str
     "##{hex_val}"
   end
-  
+
   #returns
   def to_s
     hex_str
   end
-  
-  
-  
+
+
   def set_hexval_from_string(str)
       if (str.first.strip =~ /#*([A-F0-9]{3,6})/i) then
           val = $+
@@ -42,25 +45,26 @@ class Color
           @hex_val = val
       else
           raise ArgumentError, "#{self} Expected a string of form '0F0F0F' or '#0F0F0F' got '#{str}'"
-      end      
+      end
       true
-  end  
-  
+  end
+
   def html_chip(index)
     chip_w,chip_h = 50,20
     "<div class='pallet color_chip' style='border:thin solid #000;'>
-      <p class='pallet color_chip' style='background-color:#{hex_str};'>
-        #{index}  #{hex_str}
+      <p class='color_chip' style='background-color:#{hex_str};'>
+
       </p>
+      <p class='label'>#{index} #{hex_str}</p>
     </div>\n"
   end
-  
+
 end
 
 
 class Pallet < Array
   include Loopable
-  
+
   attr_reader :collection
   @@DEFAULTS = {:collection_name => :pantoneish }
   def initialize(*args)
@@ -70,13 +74,15 @@ class Pallet < Array
       load_range_from_collection(args.first)
     end
   end
-  
+
+
+
   def get_collection_data(file_name)
     fileh = File.read(File.join(File.dirname(__FILE__),'pallets',"#{@@DEFAULTS[:collection_name]}.yaml"))
     dat = YAML.load(fileh)
     dat[ "#{@@DEFAULTS[:collection_name]}" ]
   end
-  
+
   def load_range_from_collection(range)
     #collection choosing is not yet implemented
     col = get_collection_data("#{@@DEFAULTS[:collection_name]}.yaml")
@@ -84,16 +90,26 @@ class Pallet < Array
       self << Color.new(c)
     end
   end
-  
+
   def load_default_collection
     in_ar = get_collection_data("#{@@DEFAULTS[:collection_name]}.yaml")
     in_ar.each do |c|
       self << Color.new(c)
     end
   end
-  
+
   def html_chips
-    blob = ''
+    blob = <<-CSS
+      <style type='text/css'>
+      div.pallet {width:120px; padding:10px;}
+      div.pallet p.color_chip {height:100px;}
+      div.pallet p.label {
+        border:1px solid #000;
+        text-align:center;
+        padding:6px;
+      }
+      </style>
+    CSS
     self.each_with_index do |c,i|
       blob << c.html_chip(i)
     end
@@ -101,6 +117,3 @@ class Pallet < Array
   end
 
 end
-
-p = Pallet.new
-#puts p.html_chips

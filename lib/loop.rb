@@ -1,3 +1,4 @@
+
 module Loopable
 # Mixin for Array like objects
 
@@ -6,7 +7,7 @@ module Loopable
     @position = index
   end
   alias_method :set_pos, :set_position
-  
+
   #returns the position ( current index )
   def position
     unless(defined?(@position)) then
@@ -16,12 +17,13 @@ module Loopable
   end
   alias_method :current_index, :position
   alias_method :pointer, :position
-  
+
   #retruns the object at position
   def current
-    #if self[position].respond_to?(:loopable_current) then
-      self[position].loopable_current if self[position].respond_to?('loopable_current')
-    #end
+    #call the loopable_current method on the object if
+    #is defined.
+    self[position].loopable_current if self[position].respond_to?('loopable_current')
+
     self[position]
   end
 
@@ -45,7 +47,7 @@ module Loopable
     steps.times { self.next }
     current
   end
-  
+
   # decrements position, looping back from the end
   #if necessary
   def prev
@@ -56,7 +58,7 @@ module Loopable
     end
       current
   end
-  
+
   #moves the position back a number of steps and
   #returns the object stored there
   def backward(steps = 1)
